@@ -1,4 +1,4 @@
-name: Unpack MINU
+name: Finalize MINU source
 on:
   push:
     paths:
@@ -6,17 +6,37 @@ on:
 permissions:
   contents: write
 jobs:
-  unpack:
+  finalize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract and save source
+      - name: Finalize license and release text
         run: |
-          test -f MINU-GitHub-Upload.zip
-          python3 -m zipfile -e MINU-GitHub-Upload.zip .
-          rm MINU-GitHub-Upload.zip
+          python3 - <<'PY'
+          import pathlib, hashlib, json
+          p = pathlib.Path(".")
+          sums = json.loads((p / "SOURCE-CHECKSUMS.json").read_text())
+          for name, expected in sums.items():
+              assert hashlib.sha256((p / name).read_bytes()).hexdigest() == expected, name
+          draft = p / "LICENSE-DRAFT.txt"
+          text = draft.read_text().split("\nDRAFT ADOPTION NOTE")[0]
+          text = "\n".join(line for line in text.splitlines() if not line.startswith("OWNER-ADOPTION DRAFT.")) + "\n"
+          (p / "LICENSE").write_text(text)
+          draft.unlink()
+          readme = p / "README.md"
+          lines = readme.read_text().splitlines()
+          lines[4] = "This source is published for inspection, local testing and security review under the MINU Source-Available License in [LICENSE](LICENSE). Production deployment and commercial use require separate written permission. Third-party licenses and previously granted rights remain applicable."
+          readme.write_text("\n".join(lines) + "\n")
+          for name in ["package.json", "package-lock.json"]:
+              f = p / name
+              f.write_text(f.read_text().replace('"license": "UNLICENSED"', '"license": "SEE LICENSE IN LICENSE"'))
+          sums.pop("LICENSE-DRAFT.txt")
+          for name in ["LICENSE", "README.md", "package.json", "package-lock.json"]:
+              sums[name] = hashlib.sha256((p / name).read_bytes()).hexdigest()
+          (p / "SOURCE-CHECKSUMS.json").write_text(json.dumps(dict(sorted(sums.items())), indent=2) + "\n")
+          PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Add MINU reward program and verification"
+          git add LICENSE LICENSE-DRAFT.txt README.md package.json package-lock.json SOURCE-CHECKSUMS.json
+          git commit -m "Finalize source license and release documentation"
           git push
