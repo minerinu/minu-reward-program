@@ -2,7 +2,7 @@
 
 Source for inspecting the on-chain MINU mining and SOL reward logic. This package contains the Rust program, a JavaScript reference client, local tests and deployment verification tooling.
 
-This is a publication candidate. Its proposed source-available license is in LICENSE-DRAFT.txt and has not been finalized. It is not an unrestricted open-source release.
+This source is published for inspection, local testing and security review under the MINU Source-Available License in [LICENSE](LICENSE). Production deployment and commercial use require separate written permission. Third-party licenses and previously granted rights remain applicable.
 
 ## Mining rules
 
