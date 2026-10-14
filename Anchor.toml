@@ -1,0 +1,14 @@
+[toolchain]
+anchor_version = "0.31.1"
+[features]
+resolution = true
+skip-lint = false
+[programs.localnet]
+sol_fee_staking = "2LfTVADJBFLwj9tR296ZQozB1x1cAT7CtNnAsvVBXys1"
+[programs.devnet]
+sol_fee_staking = "2LfTVADJBFLwj9tR296ZQozB1x1cAT7CtNnAsvVBXys1"
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+[scripts]
+test = "npm run test:onchain"

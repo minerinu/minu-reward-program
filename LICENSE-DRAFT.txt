@@ -1,0 +1,64 @@
+MINU SOURCE-AVAILABLE LICENSE 1.0
+OWNER-ADOPTION DRAFT. NOT OPERATIVE UNTIL ADOPTED AND PUBLISHED AS LICENSE.
+
+Copyright (c) 2026 MINU copyright holders.
+
+1. Scope and definitions
+
+"Licensor" means the copyright holder or holders of the original MINU material identified by its copyright notices. "Software" means the original reward-program code, reference client, tests and technical documentation distributed by Licensor under this license. "You" means the individual or entity exercising permissions under this license.
+
+This license covers only rights Licensor is entitled to grant. Third-party components remain governed by their own licenses. MINU names, logos, artwork, animations, soundtrack, website design and other creative assets are excluded. No trademark rights are granted.
+
+2. Permitted uses
+
+Subject to these terms, Licensor grants You a non-exclusive, worldwide, royalty-free license to:
+
+(a) View, download and make copies of the Software for inspection, learning, evaluation and security research.
+(b) Modify, compile and execute copies locally or in isolated development or test-network environments for those purposes, provided this does not operate a public production service or handle real user funds.
+(c) Perform professional security reviews and technical evaluations, including paid reviews, and share copies privately with personnel participating in such reviews subject to these same restrictions.
+(d) Publish findings, criticism, vulnerability reports, benchmark results, patches and limited source excerpts reasonably necessary to explain those findings. Preserve attribution for copied code and do not represent a modified version as official MINU software.
+
+Nothing in this license restricts truthful criticism or requires Licensor's approval of research findings. Testing must not involve unauthorized access to third-party systems or transactions using another person's funds without authorization.
+
+3. Uses requiring separate written permission
+
+Except where Section 2 or applicable law permits the use, You must obtain a separate written license from Licensor before:
+
+(a) Deploying the Software or a derivative of its protected code to a production blockchain or production service.
+(b) Using the Software or such a derivative to provide a commercial product, hosted service, launchpad or mining or reward-distribution service, including a competing service.
+(c) Selling, sublicensing or commercially distributing the Software or such a derivative.
+(d) Redistributing the complete Software or a substantially complete modified copy, other than private copies permitted for security review under Section 2(c) and rights granted under the public hosting platform terms described in Section 5.
+
+Charging for a security review or technical evaluation permitted under Section 2 does not, by itself, trigger the commercial-use restriction. Licensor may separately authorize uses in writing and specify their terms. Permission requests should use the official contact route at https://minerinu.app.
+
+4. Notices and endorsement
+
+Keep copyright notices, this license and third-party notices with permitted copies. Clearly identify substantive changes when sharing patches or modified excerpts. You may identify MINU as the origin of the Software, but may not claim sponsorship, certification or endorsement without permission. This license is source available; it is not an OSI-approved open-source license.
+
+5. Independent work and previously granted rights
+
+This license does not prohibit independently created implementations that do not copy protected material. It does not withdraw permissions validly granted for earlier copies under MIT or another license. Third-party licenses, exceptions under applicable law and rights outside Licensor's ownership are not overridden.
+
+When Licensor publishes the Software on a public hosting platform, nothing here restricts rights necessarily granted under that platform's applicable terms, including viewing and forking within GitHub. Such hosting-platform rights do not, by themselves, grant additional production-deployment or commercial-use rights.
+
+Nothing here restricts modification or replacement of a separately licensed library, or reverse engineering for debugging such library modifications, where these rights are required by an applicable third-party license, including the LGPL. Third-party patent permissions remain governed by the relevant third-party licenses.
+
+6. Termination
+
+Your permissions under this license terminate if You materially violate its terms. If You stop the violation and remedy it within 30 days after receiving written notice from Licensor, permissions are reinstated for a first violation unless an applicable law or separate written agreement provides otherwise. Termination does not affect rights preserved under Section 5. Licensor may pursue remedies available under applicable law; this license does not guarantee that copying can be prevented.
+
+7. No warranty
+
+To the maximum extent permitted by applicable law, the Software is provided "AS IS", without warranties or conditions of any kind, express or implied, including merchantability, fitness for a particular purpose, title, non-infringement, security or uninterrupted operation. Public source, passing tests and deployment verification are not assurances that the Software is safe or suitable for production use.
+
+8. Limitation of liability
+
+To the maximum extent permitted by applicable law, Licensor is not liable for damages arising from use of the Software, including loss of funds, profits, data or availability. This section does not exclude liability that cannot lawfully be excluded.
+
+9. Reserved rights and separate agreements
+
+All rights not expressly granted are reserved. No ownership transfer, patent license or trademark license is implied. A separate written agreement signed or otherwise validly approved by Licensor may grant additional permissions. An invalid provision does not invalidate the remaining provisions to the extent applicable law permits them to remain in effect.
+
+DRAFT ADOPTION NOTE
+
+Before replacing this draft with a public LICENSE, confirm the legal rights holder, authority to license all included original material, third-party obligations and any previously distributed MIT copies. Review the wording for the relevant jurisdiction. This draft is a proposed license document, not a legal opinion or a guarantee of enforceability.

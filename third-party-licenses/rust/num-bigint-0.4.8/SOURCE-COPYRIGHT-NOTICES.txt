@@ -1,0 +1,2 @@
+// Copyright (c) 2013-2014 The Rust Project Developers
+// Copyright 2013-2014 The Rust Project Developers. See the COPYRIGHT

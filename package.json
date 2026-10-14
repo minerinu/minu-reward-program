@@ -1,0 +1,22 @@
+{
+  "name": "minu-reward-program",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:runtime": "node --test tests/reward-flow-runtime.mjs",
+    "test:rust": "cargo test --lib --locked",
+    "verify:devnet": "node scripts/verify-devnet.mjs"
+  },
+  "dependencies": {
+    "@solana/web3.js": "1.98.4",
+    "@solana/spl-token": "0.4.14",
+    "buffer": "6.0.3"
+  },
+  "devDependencies": {
+    "@solana/kit": "8.4.0",
+    "litesvm": "1.6.0"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,20 @@
+// Read-only binary verification. No keys, signing or transaction submission.
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {Connection,PublicKey} from '@solana/web3.js';
+const m=JSON.parse(await readFile('releases/manifest.json'));
+const binary=await readFile(m.binary);
+assert.equal(binary.length,m.bytes);
+assert.equal(createHash('sha256').update(binary).digest('hex'),m.sha256);
+const c=new Connection('https://api.devnet.solana.com',{commitment:'finalized',fetch:(u,o)=>fetch(u,{...o,signal:AbortSignal.timeout(25000)})});
+assert.equal(await c.getGenesisHash(),m.genesis);
+const loader=new PublicKey('BPFLoaderUpgradeab1e11111111111111111111111'),program=new PublicKey(m.programId),dataKey=new PublicKey(m.programData);
+const [p,d]=await c.getMultipleAccountsInfo([program,dataKey]);
+assert(p?.executable&&p.owner.equals(loader));assert(d?.owner.equals(loader));
+assert.equal(p.data.readUInt32LE(0),2);assert(new PublicKey(p.data.subarray(4,36)).equals(dataKey));
+assert.equal(d.data.readUInt32LE(0),3);
+assert(d.data.subarray(45,45+binary.length).equals(binary),'Live binary differs');
+assert(d.data.subarray(45+binary.length).every(x=>x===0),'Unexpected trailing code');
+const authority=d.data[12]===1?new PublicKey(d.data.subarray(13,45)).toBase58():null;
+console.log(JSON.stringify({network:m.network,programId:m.programId,sha256:m.sha256,binaryMatches:true,upgradeAuthority:authority,transactionsSubmitted:0},null,2));

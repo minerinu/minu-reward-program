@@ -1,0 +1,20 @@
+{
+  "verifiedAt": "2026-10-14T18:54:57.271517+00:00",
+  "source": "programs/sol_fee_staking/src/lib.rs",
+  "sourceSha256": "c335337023d9f0ce75dcfb5598e66380b2bd74d35bd8193a79e26f8559aee16b",
+  "cargoLockSha256": "e281435bcb4d4b9d2378360e11af8f64acb7d7fb73f7e03bde9331aa559be61c",
+  "buildDriver": "cargo-build-sbf 2.3.13",
+  "platformTools": "1.54",
+  "rustc": "1.89.0-dev",
+  "target": "sbpfv3-solana-solana",
+  "binaryBytes": 395416,
+  "rebuiltSha256": "3a752a23a2d5157385e8bea6cdfc224fdff02aea5a8a5558495c9ca3959c3655",
+  "referenceSha256": "3a752a23a2d5157385e8bea6cdfc224fdff02aea5a8a5558495c9ca3959c3655",
+  "exactMatch": true,
+  "stripStep": "llvm-objcopy --strip-all",
+  "deploymentMutations": 0,
+  "compilerDiagnostics": "Dependency stack-frame warnings require security review; binary match does not establish safety.",
+  "javascriptUnitChecksPassed": 19,
+  "freshBinaryRuntimeChecksPassed": 20,
+  "cleanDependencyInstallationVerified": true
+}

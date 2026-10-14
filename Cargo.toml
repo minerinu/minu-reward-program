@@ -1,0 +1,8 @@
+[workspace]
+members = ["programs/sol_fee_staking"]
+resolver = "2"
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+lto = "fat"
+codegen-units = 1

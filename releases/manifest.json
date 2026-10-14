@@ -1,0 +1,10 @@
+{
+  "network": "devnet",
+  "genesis": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "programId": "2LfTVADJBFLwj9tR296ZQozB1x1cAT7CtNnAsvVBXys1",
+  "programData": "AcgZTUTirNY8RwpceoREArP77WXS9JPYnFPynX92QKgb",
+  "binary": "releases/minu-devnet.so",
+  "bytes": 395416,
+  "sha256": "3a752a23a2d5157385e8bea6cdfc224fdff02aea5a8a5558495c9ca3959c3655",
+  "upgradeable": true
+}
